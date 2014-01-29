@@ -12,10 +12,12 @@
 @interface NEViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, NETableViewCellDelegate> {
     NSString *requestData;
+    UIRefreshControl *refreshControl;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *currentShows;
 @property (strong, nonatomic) NSMutableArray *names;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (retain) NSString *requestData;
+@property (retain) UIRefreshControl *refreshControl;
 @end
