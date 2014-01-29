@@ -59,6 +59,8 @@ static NEShowDatabase *_database;
         
         if (sqlite3_exec(_database, [query UTF8String], nil, nil, &error) != SQLITE_OK) {
             NSLog(@"Error adding show: %s", error);
+        } else {
+            NSLog(@"Adding show: %@ %@", show.showId, show.showName);
         }
     }
 }
