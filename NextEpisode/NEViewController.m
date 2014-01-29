@@ -22,6 +22,7 @@
 @implementation NEViewController
 
 @synthesize requestData;
+@synthesize refreshControl;
 
 - (NSMutableArray*)names
 {
@@ -33,22 +34,15 @@
     return _names;
 }
 
--(void) refreshView:(UIRefreshControl *)refreshControl {
-    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Fetching show dates..."];
-    
+-(void) refreshView:(UIRefreshControl *)refresh {
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Fetching show dates..."];
+    refreshControl = refresh;
     // update the shows
     [self updateShows];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, h:mm a"];
-    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
-                             [formatter stringFromDate:[NSDate date]]];
-    
-    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
-    [refreshControl endRefreshing];
 }
 
-- (void)updateShows {
+- (void)updateShows
+{
     for (NEShow *show in _names) {
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://epguides.com/common/exportToCSV.asp?rage=%@", show.showId]];
         __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -85,8 +79,21 @@
                 }
             }
         }];
+        [request setDelegate:self];
         [request startAsynchronous];
+        [request setDidFinishSelector:@selector(updateShowsFinished:)];
     }
+}
+
+- (void)updateShowsFinished:(ASIHTTPRequest *) request
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
+                             [formatter stringFromDate:[NSDate date]]];
+    
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    [refreshControl endRefreshing];
 }
 
 - (void)redraw
