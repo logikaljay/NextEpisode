@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NETableViewCellDelegate.h"
 
 @interface NEViewController : UIViewController
+<UITableViewDataSource, UITableViewDelegate, NETableViewCellDelegate> {
+    NSString *requestData;
+}
 
+@property (weak, nonatomic) IBOutlet UITableView *currentShows;
+@property (strong, nonatomic) NSMutableArray *names;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (retain) NSString *requestData;
 @end
