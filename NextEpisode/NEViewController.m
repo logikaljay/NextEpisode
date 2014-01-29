@@ -9,6 +9,7 @@
 #import "NEViewController.h"
 #import "NETableViewCell.h"
 #import "NEAddShowViewController.h"
+#import "NESearchShowViewController.h"
 #import "NEShowDatabase.h"
 #import "NEShow.h"
 #import "ASIHTTPRequest.h"
@@ -111,7 +112,7 @@
 - (IBAction)startAddShowView:(id)sender
 {
     NSLog(@"Add Show button pressed");
-    NEAddShowViewController *addView = [[NEAddShowViewController alloc] initWithNibName:@"NEAddShowViewController" bundle:nil];
+    NESearchShowViewController *addView = [[NESearchShowViewController alloc] initWithNibName:@"NESearchShowViewController" bundle:nil];
     [self presentViewController:addView animated:YES completion:nil];
 }
 

@@ -21,6 +21,8 @@
 		745E38E718970C2800EC4906 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E38C918970C2800EC4906 /* UIKit.framework */; };
 		745E38EF18970C2800EC4906 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 745E38ED18970C2800EC4906 /* InfoPlist.strings */; };
 		745E38F118970C2800EC4906 /* NextEpisodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 745E38F018970C2800EC4906 /* NextEpisodeTests.m */; };
+		746005301898C223003D07FD /* NESearchShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460052E1898C223003D07FD /* NESearchShowViewController.m */; };
+		746005311898C223003D07FD /* NESearchShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7460052F1898C223003D07FD /* NESearchShowViewController.xib */; };
 		748FEFF418984ECB00C4344D /* NETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 748FEFF318984ECB00C4344D /* NETableViewCell.m */; };
 		748FF00B18986EC700C4344D /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 748FEFF818986EC700C4344D /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		748FF00C18986EC700C4344D /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 748FEFFB18986EC700C4344D /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -74,6 +76,9 @@
 		745E38EC18970C2800EC4906 /* NextEpisodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NextEpisodeTests-Info.plist"; sourceTree = "<group>"; };
 		745E38EE18970C2800EC4906 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		745E38F018970C2800EC4906 /* NextEpisodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextEpisodeTests.m; sourceTree = "<group>"; };
+		7460052D1898C223003D07FD /* NESearchShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NESearchShowViewController.h; path = ../NESearchShowViewController.h; sourceTree = "<group>"; };
+		7460052E1898C223003D07FD /* NESearchShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NESearchShowViewController.m; path = ../NESearchShowViewController.m; sourceTree = "<group>"; };
+		7460052F1898C223003D07FD /* NESearchShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NESearchShowViewController.xib; path = ../NESearchShowViewController.xib; sourceTree = "<group>"; };
 		748FEFF218984ECB00C4344D /* NETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETableViewCell.h; sourceTree = "<group>"; };
 		748FEFF318984ECB00C4344D /* NETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETableViewCell.m; sourceTree = "<group>"; };
 		748FEFF5189856D900C4344D /* NETableViewCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NETableViewCellDelegate.h; sourceTree = "<group>"; };
@@ -186,6 +191,9 @@
 		745E38CB18970C2800EC4906 /* NextEpisode */ = {
 			isa = PBXGroup;
 			children = (
+				7460052D1898C223003D07FD /* NESearchShowViewController.h */,
+				7460052E1898C223003D07FD /* NESearchShowViewController.m */,
+				7460052F1898C223003D07FD /* NESearchShowViewController.xib */,
 				748FEFF5189856D900C4344D /* NETableViewCellDelegate.h */,
 				748FEFF218984ECB00C4344D /* NETableViewCell.h */,
 				748FEFF318984ECB00C4344D /* NETableViewCell.m */,
@@ -362,6 +370,7 @@
 			files = (
 				74C16D8F18975282008FED58 /* showlist.sqlite3 in Resources */,
 				74C16D9A1898306F008FED58 /* NEAddShowViewController.xib in Resources */,
+				746005311898C223003D07FD /* NESearchShowViewController.xib in Resources */,
 				745E38DE18970C2800EC4906 /* Images.xcassets in Resources */,
 				745E38D018970C2800EC4906 /* InfoPlist.strings in Resources */,
 				745E38D918970C2800EC4906 /* Main.storyboard in Resources */,
@@ -403,6 +412,7 @@
 				748FF00B18986EC700C4344D /* ASIAuthenticationDialog.m in Sources */,
 				745E38D218970C2800EC4906 /* main.m in Sources */,
 				748FF00C18986EC700C4344D /* ASIDataCompressor.m in Sources */,
+				746005301898C223003D07FD /* NESearchShowViewController.m in Sources */,
 				74C16D8818974817008FED58 /* NEShowDatabase.m in Sources */,
 				748FEFF418984ECB00C4344D /* NETableViewCell.m in Sources */,
 				748FF02018987E4500C4344D /* NSObject+stringByStrippingHTML.m in Sources */,
