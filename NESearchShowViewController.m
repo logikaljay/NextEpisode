@@ -10,6 +10,7 @@
 #import "NEShow.h"
 #import "NEShowDatabase.h"
 #import "NEGetShowsList.h"
+#import "MBProgressHUD.h"
 
 @implementation NESearchShowViewController
 
@@ -39,26 +40,41 @@
     // build our search URL
     NSString *url = [NSString stringWithFormat:@"http://services.tvrage.com/feeds/search.php?show=%@", uiSearchBar.text];
     
-    // filter people by match
-    NSMutableArray *results = [[[NEGetShowsList alloc] init] parseXMLFileAtURL:[NSURL URLWithString:url]];
+    __block NSMutableArray *results = [[NSMutableArray alloc] init];
     
-    // iterate over articles creating temp shows for each one
-    for (NSMutableDictionary *result in results) {
-        NEShow *show = [[NEShow alloc] init];
-        show.showId = [[result objectForKey:@"showid"] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        show.showName = [[result objectForKey:@"name"] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    // start progress hud
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Loading..."];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        [self.shows addObject:show];
-    }
+        // get results from tvrage
+        results = [[[NEGetShowsList alloc] init] parseXMLFileAtURL:[NSURL URLWithString:url]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            // iterate over articles creating temp shows for each one
+            for (NSMutableDictionary *result in results) {
+                NEShow *show = [[NEShow alloc] init];
+                show.showId = [[result objectForKey:@"showid"] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+                show.showName = [[result objectForKey:@"name"] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+                
+                [self.shows addObject:show];
+            }
+            
+            [searchBar setShowsCancelButton:NO animated:YES];
+            [searchBar resignFirstResponder];
+            self.resultsView.allowsSelection = YES;
+            self.resultsView.scrollEnabled = YES;
+            
+            [self.tableData removeAllObjects];
+            [self.tableData addObjectsFromArray:_shows];
+            [self.resultsView reloadData];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
     
-    [searchBar setShowsCancelButton:NO animated:YES];
-    [searchBar resignFirstResponder];
-    self.resultsView.allowsSelection = YES;
-    self.resultsView.scrollEnabled = YES;
-	
-    [self.tableData removeAllObjects];
-    [self.tableData addObjectsFromArray:_shows];
-    [self.resultsView reloadData];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)uiSearchBar

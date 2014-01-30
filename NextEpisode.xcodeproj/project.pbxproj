@@ -24,6 +24,7 @@
 		746005301898C223003D07FD /* NESearchShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460052E1898C223003D07FD /* NESearchShowViewController.m */; };
 		746005311898C223003D07FD /* NESearchShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7460052F1898C223003D07FD /* NESearchShowViewController.xib */; };
 		746005351899BFB9003D07FD /* NEGetShowsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 746005341899BFB9003D07FD /* NEGetShowsList.m */; };
+		746005391899C8D9003D07FD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 746005381899C8D9003D07FD /* MBProgressHUD.m */; };
 		748FEFF418984ECB00C4344D /* NETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 748FEFF318984ECB00C4344D /* NETableViewCell.m */; };
 		748FF00B18986EC700C4344D /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 748FEFF818986EC700C4344D /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		748FF00C18986EC700C4344D /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 748FEFFB18986EC700C4344D /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -82,6 +83,8 @@
 		7460052F1898C223003D07FD /* NESearchShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NESearchShowViewController.xib; path = ../NESearchShowViewController.xib; sourceTree = "<group>"; };
 		746005331899BFB9003D07FD /* NEGetShowsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEGetShowsList.h; sourceTree = "<group>"; };
 		746005341899BFB9003D07FD /* NEGetShowsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEGetShowsList.m; sourceTree = "<group>"; };
+		746005371899C8D9003D07FD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		746005381899C8D9003D07FD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		748FEFF218984ECB00C4344D /* NETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETableViewCell.h; sourceTree = "<group>"; };
 		748FEFF318984ECB00C4344D /* NETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETableViewCell.m; sourceTree = "<group>"; };
 		748FEFF5189856D900C4344D /* NETableViewCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NETableViewCellDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		745E38B918970C2800EC4906 = {
 			isa = PBXGroup;
 			children = (
+				746005361899C8BA003D07FD /* MBProgressHUD */,
 				746005321899BF92003D07FD /* Helpers */,
 				748FF02118987E4D00C4344D /* Categories */,
 				748FEFF618986EA100C4344D /* ASIHTTPRequest */,
@@ -252,6 +256,15 @@
 				746005341899BFB9003D07FD /* NEGetShowsList.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		746005361899C8BA003D07FD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				746005371899C8D9003D07FD /* MBProgressHUD.h */,
+				746005381899C8D9003D07FD /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		748FEFF618986EA100C4344D /* ASIHTTPRequest */ = {
@@ -428,6 +441,7 @@
 				746005301898C223003D07FD /* NESearchShowViewController.m in Sources */,
 				74C16D8818974817008FED58 /* NEShowDatabase.m in Sources */,
 				748FEFF418984ECB00C4344D /* NETableViewCell.m in Sources */,
+				746005391899C8D9003D07FD /* MBProgressHUD.m in Sources */,
 				748FF02018987E4500C4344D /* NSObject+stringByStrippingHTML.m in Sources */,
 				748FF01118986EC700C4344D /* ASIInputStream.m in Sources */,
 				748FF01018986EC700C4344D /* ASIHTTPRequest.m in Sources */,
