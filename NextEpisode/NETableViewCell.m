@@ -25,19 +25,6 @@
     }
     return self;
 }
-/*
-- (id) init {
-    self = [super init];
-    if (self) {
-        // Initialization code
-        UIGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-        recognizer.delegate = self;
-        [self addGestureRecognizer:recognizer];
-    }
-    
-    return self;
-}
-*/
 
 - (void) layoutSubviews {
     [super layoutSubviews];

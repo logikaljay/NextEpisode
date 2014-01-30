@@ -85,8 +85,8 @@
 		746005341899BFB9003D07FD /* NEGetShowsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEGetShowsList.m; sourceTree = "<group>"; };
 		746005371899C8D9003D07FD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		746005381899C8D9003D07FD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		748FEFF218984ECB00C4344D /* NETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETableViewCell.h; sourceTree = "<group>"; };
-		748FEFF318984ECB00C4344D /* NETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETableViewCell.m; sourceTree = "<group>"; };
+		748FEFF218984ECB00C4344D /* NETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NETableViewCell.h; path = NextEpisode/NETableViewCell.h; sourceTree = "<group>"; };
+		748FEFF318984ECB00C4344D /* NETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NETableViewCell.m; path = NextEpisode/NETableViewCell.m; sourceTree = "<group>"; };
 		748FEFF5189856D900C4344D /* NETableViewCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NETableViewCellDelegate.h; sourceTree = "<group>"; };
 		748FEFF718986EC700C4344D /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		748FEFF818986EC700C4344D /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -203,8 +203,6 @@
 				7460052E1898C223003D07FD /* NESearchShowViewController.m */,
 				7460052F1898C223003D07FD /* NESearchShowViewController.xib */,
 				748FEFF5189856D900C4344D /* NETableViewCellDelegate.h */,
-				748FEFF218984ECB00C4344D /* NETableViewCell.h */,
-				748FEFF318984ECB00C4344D /* NETableViewCell.m */,
 				74C16D961898306F008FED58 /* NEAddShowViewController.h */,
 				74C16D971898306F008FED58 /* NEAddShowViewController.m */,
 				74C16D981898306F008FED58 /* NEAddShowViewController.xib */,
@@ -308,6 +306,8 @@
 		74C16D7F18973CFE008FED58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				748FEFF218984ECB00C4344D /* NETableViewCell.h */,
+				748FEFF318984ECB00C4344D /* NETableViewCell.m */,
 				74C16D8318974491008FED58 /* NEShow.h */,
 				74C16D8418974491008FED58 /* NEShow.m */,
 				74C16D8618974817008FED58 /* NEShowDatabase.h */,
